@@ -1,18 +1,21 @@
 import { Text, TouchableOpacity } from 'react-native'
 import React from 'react'
 
-export default function Button(bgColor, btnLabel, textColor) {
+export default function Button({btnLabel, bgcolor, press}) {
     return (
         <TouchableOpacity
+        onPress={press}
             style={{
-                backgroundColor: bgColor,
-                borderR: 100,
+                backgroundColor: 'red',
+                borderRadius: 100,
                 alignItems: 'center',
-                width: 350,
+                width: 320,
+                paddingVertical: 5,
+                marginVertical: 10
             }}>
-            <Text style={{ color: textColor, fontSize: 25, fontWeight: 'bold' }}>
-                {btnLabel}
-            </Text>
+      <Text style={{color: bgcolor, fontSize: 25, fontWeight: 'bold'}}>
+        {btnLabel}
+      </Text>
         </TouchableOpacity>
     )
 }
