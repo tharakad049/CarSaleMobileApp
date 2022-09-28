@@ -1,14 +1,15 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 import Background from './Background'
+import Button from './Button'
 
 const Home = () => {
   return (
     <Background>
-      <Text style={{color: 'white',  fontSize: 50 }}>Car Sale Nimal</Text>
-      <Text style={{color: 'white',  fontSize: 40 }}>Lest Start</Text>
-      <Text style={{color: 'white',  fontSize: 40 }}>Our System </Text>
-   
+      <View style={{left: 20, bottom: -20}}>
+      <Text style={{color: 'white',  fontSize: 30 }}>Car Sale Nimal</Text>
+      <Text style={{color: 'white',  fontSize: 20 }}>Lest Start</Text>
+      </View>
     </Background>
   )
 }
