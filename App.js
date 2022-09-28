@@ -10,9 +10,7 @@ function HomeScreen() {
     </View>
   );
 }
-
 const Stack = createNativeStackNavigator();
-
 function App() {
   return (
     <NavigationContainer>
