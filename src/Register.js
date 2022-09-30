@@ -6,31 +6,103 @@ import Button from './Button'
 
 const Register = (props) => {
 
-  const [name, setName ]=useState("");
+  const [userName, setUserName] = useState("");
+  const [userEmail, setUserEmail] = useState("");
+  const [userPassword, setuserPassword] = useState("");
+  const [userContact, setUserContact] = useState("");
+  const [userAddress, setUserAddress] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [isRegistraionSuccess, setIsRegistraionSuccess] = useState(false);
+
+  const handleSubmitButton = () => {
+    setErrortext('');
+    if (!userName) {
+      alert('Please fill Name');
+      return;
+    }
+    if (!userEmail) {
+      alert('Please fill Email');
+      return;
+    }
+    if (!userPassword) {
+      alert('Please fill Password');
+      return;
+    }
+    if (!userContact) {
+      alert('Please fill Contact');
+      return;
+    }
+    if (!userAddress) {
+      alert('Please fill Address');
+      return;
+    }
+    setLoading(true);
+    var dataToSend = {
+      name: userName,
+      email: userEmail,
+      password: userPassword,
+      contact: userContact,
+      address: userAddress,
+    };
+   
+  
+  if (isRegistraionSuccess) {
+    return (
+      <View>
+        <Text>
+          Registration Successful
+        </Text>
+        <TouchableOpacity
+          onPress={() => props.navigation.navigate('Login')}>
+          <Text>Login Now</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  }
+
 
   return (
     <Background>
       <View style={{ alignItems: "center", width: 360 }}>
         <Text style={{ color: "white", fontSize: 50, fontWeight: "bold", top: 10 }}>Register</Text>
-        
-        <KeyboardAvoidingView>
-        <View style={{ backgroundColor: "white", alignItems: "center", height: 700, width: 360, top: 20, borderTopLeftRadius: 100, paddingTop: 20 }}>
-          <Field placeholder="Full Name"/>
-          <Field placeholder="Valid Email Address"/>
-          <Field placeholder="Password" secureTextEntry={true} />
-          <Field placeholder="Contact Number"/>
-          <Field placeholder="Address"/>
+        <ScrollView
+                keyboardShouldPersistTaps="handled"
+                contentContainerStyle={{
+                  justifyContent: 'center',
+                  alignContent: 'center',
+                }}>
+        <KeyboardAvoidingView enabled>
+          <View style={{ backgroundColor: "white", alignItems: "center", height: 700, width: 360, top: 20, borderTopLeftRadius: 100, paddingTop: 20 }}>
+            <Field placeholder="Username"
+              onChange={(e) => {
+                setUserName(e.target.value)
+              }}
+            />
+            <Field placeholder="Valid Email Address" onChange={(e) => {
+              setUserEmail(e.target.value)
+            }} />
+            <Field placeholder="Password" onChange={(e) => {
+              setuserPassword(e.target.value)
+            }} secureTextEntry={true} />
+            <Field placeholder="Contact Number" onChange={(e) => {
+              setUserContact(e.target.value)
+            }} />
+            <Field placeholder="Address"
+              onChange={(e) => {
+                setUserAddress(e.target.value)
+              }}
+            />
 
-          <Button textColor='white' bgcolor='green' btnLabel="Register" press={()=>{props.navigation.navigate("Details")}} />
-          <View style={{ display: 'flex', flexDirection: 'row', justifyContent: "center" }}>
-            <Text style={{ fontSize: 16, fontWeight: "bold" }}>Alreadr have an account ? </Text>
-            <TouchableOpacity onPress={() => props.navigation.navigate("Login")}>
-              <Text style={{ color: 'red', fontWeight: 'bold', fontSize: 17 }}>Login</Text>
-            </TouchableOpacity>
+            <Button textColor='white' bgcolor='green' btnLabel="Register" press={handleSubmitButton} />
+            <View style={{ display: 'flex', flexDirection: 'row', justifyContent: "center" }}>
+              <Text style={{ fontSize: 16, fontWeight: "bold" }}>Alreadr have an account ? </Text>
+              <TouchableOpacity onPress={() => props.navigation.navigate("Login")}>
+                <Text style={{ color: 'red', fontWeight: 'bold', fontSize: 17 }}>Login</Text>
+              </TouchableOpacity>
+            </View>
           </View>
-        </View>
         </KeyboardAvoidingView>
-
+        </ScrollView>
       </View>
     </Background>
   )

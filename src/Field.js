@@ -10,7 +10,7 @@ const Field = (props) => {
             width: '78%', 
             backgroundColor: 'rgb(220,220,220)',
             marginVertical: 10 }}
-            placeholderTextColor='darkGreen'></TextInput>
+            placeholderTextColor='darkgreen'></TextInput>
     )
 }
 

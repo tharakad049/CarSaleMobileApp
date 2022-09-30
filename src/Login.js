@@ -10,16 +10,15 @@ const Login = (props) => {
       <View style={{ alignItems: "center", width: 360 }}>
         <Text style={{ color: "white", fontSize: 50, fontWeight: "bold", top: 10 }}>Login</Text>
         <View style={{ backgroundColor: "white", alignItems: "center", height: 700, width: 360, top: 20, borderTopLeftRadius: 100, paddingTop: 100 }}>
-          <Text style={{ fontSize: 30, color: "darkgreen", fontWeight: "bold", top: -30 }}>
+          <Text style={{ fontSize: 30, color: "darkgreen", fontWeight: "bold", top: -80 }}>
             Welcome Back
           </Text>
-          <Text style={{ color: "gray", fontSize: 14, fontWeight: "bold", top: -30 }}>Login To Your Account</Text>
+          <Text style={{ color: "gray", fontSize: 14, fontWeight: "bold", top: -80 }}>Login To Your Account</Text>
 
-          <Field placeholder="Username"
-            keyboardType={'email-address'} />
 
-          <Field placeholder="Password"
-            secureTextEntry={true} />
+            <Field placeholder="Username"/>
+
+            <Field placeholder="Password"/>
 
           <View
             style={{ alignItems: 'flex-end', width: '78%', paddingRight: 16, marginBottom: 10 }}>
@@ -27,7 +26,7 @@ const Login = (props) => {
               Forgot Password ?
             </Text>
           </View>
-          <Button textColor='white' bgcolor='green' btnLabel="Login" press={()=>{props.navigation.navigate("Details")}} />
+          <Button textColor='white' bgcolor='green' btnLabel="Login" press={() => { props.navigation.navigate("Details") }} />
           <View style={{ display: 'flex', flexDirection: 'row', justifyContent: "center" }}>
             <Text style={{ fontSize: 16, fontWeight: "bold" }}>Don't have an account ? </Text>
             <TouchableOpacity onPress={() => props.navigation.navigate("SignIn")}>
