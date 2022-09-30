@@ -27,7 +27,7 @@ const Login = (props) => {
               Forgot Password ?
             </Text>
           </View>
-          <Button textColor='white' bgcolor='green' btnLabel="Login" press={() => alert("Logged In")} />
+          <Button textColor='white' bgcolor='green' btnLabel="Login" press={()=>{props.navigation.navigate("Details")}} />
           <View style={{ display: 'flex', flexDirection: 'row', justifyContent: "center" }}>
             <Text style={{ fontSize: 16, fontWeight: "bold" }}>Don't have an account ? </Text>
             <TouchableOpacity onPress={() => props.navigation.navigate("SignIn")}>

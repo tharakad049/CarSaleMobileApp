@@ -21,7 +21,7 @@ const Register = (props) => {
           <Field placeholder="Contact Number"/>
           <Field placeholder="Address"/>
 
-          <Button textColor='white' bgcolor='green' btnLabel="Register" press={() => alert("Signed In")} />
+          <Button textColor='white' bgcolor='green' btnLabel="Register" press={()=>{props.navigation.navigate("Details")}} />
           <View style={{ display: 'flex', flexDirection: 'row', justifyContent: "center" }}>
             <Text style={{ fontSize: 16, fontWeight: "bold" }}>Alreadr have an account ? </Text>
             <TouchableOpacity onPress={() => props.navigation.navigate("Login")}>

@@ -8,8 +8,9 @@ const Home = (props) => {
     <Background>
       <View style={{bottom: -40, alignItems: "center" }}>
       <Text style={{color: 'white',  fontSize: 38 , fontWeight: 'bold', left: 20 }}>Welcome To NISAL</Text>
-      <Text style={{color: 'white',  fontSize: 40 , fontWeight: 'bold' }}>Car Sale</Text>
+      <Text style={{color: 'white',  fontSize: 35 , fontWeight: 'bold' }}>Car Sale</Text>
       </View>
+      
       <View style={{left: 20, bottom: -100}}>
       <Button bgcolor='green' textColor='white' btnLabel="Login"  press={()=>{props.navigation.navigate("Login")}}/>
       <Button bgcolor='white' textColor='black' btnLabel="Sign Up" press={()=>{props.navigation.navigate("SignIn")}}/>
