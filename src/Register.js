@@ -1,19 +1,23 @@
-import { View, Text, TouchableOpacity } from 'react-native'
-import React from 'react'
+import { View, Text, TouchableOpacity, KeyboardAvoidingView } from 'react-native'
+import React, { useState } from 'react'
 import Background from './Background'
 import Field from './Field'
 import Button from './Button'
 
 const Register = (props) => {
+
+  const [name, setName ]=useState("");
+
   return (
     <Background>
       <View style={{ alignItems: "center", width: 360 }}>
         <Text style={{ color: "white", fontSize: 50, fontWeight: "bold", top: 10 }}>Register</Text>
+        
+        <KeyboardAvoidingView>
         <View style={{ backgroundColor: "white", alignItems: "center", height: 700, width: 360, top: 20, borderTopLeftRadius: 100, paddingTop: 20 }}>
-
           <Field placeholder="Full Name"/>
           <Field placeholder="Valid Email Address"/>
-          <Field placeholder="Password"/>
+          <Field placeholder="Password" secureTextEntry={true} />
           <Field placeholder="Contact Number"/>
           <Field placeholder="Address"/>
 
@@ -25,6 +29,8 @@ const Register = (props) => {
             </TouchableOpacity>
           </View>
         </View>
+        </KeyboardAvoidingView>
+
       </View>
     </Background>
   )
